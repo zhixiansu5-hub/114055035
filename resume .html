@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人履歷 - 亞洲大學學生</title>
+
+<style>
+body{
+    font-family: Arial, "Microsoft JhengHei", sans-serif;
+    margin:0;
+    background:#f5f5f5;
+}
+
+header{
+    background:#333;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+    margin-top:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+h2{
+    border-left:5px solid #333;
+    padding-left:10px;
+}
+
+button{
+    background:#333;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#555;
+}
+
+#contact{
+    display:none;
+    margin-top:10px;
+}
+
+footer{
+    text-align:center;
+    padding:15px;
+    background:#333;
+    color:white;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>個人履歷 Resume</h1>
+<p>亞洲大學學生</p>
+<p>學號：AU114055035</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>基本資料</h2>
+<p>姓名：請填寫你的名字</p>
+<p>學校：亞洲大學</p>
+<p>科系：請填寫科系</p>
+<p>年級：請填寫年級</p>
+</div>
+
+<div class="card">
+<h2>自我介紹</h2>
+<p>
+我是一名就讀於亞洲大學的學生，對於學習新知與自我成長抱持積極的態度。
+在學期間努力培養專業能力與團隊合作精神，希望未來能夠在自己的領域中持續發展並創造價值。
+</p>
+</div>
+
+<div class="card">
+<h2>技能 Skills</h2>
+<ul>
+<li>HTML / CSS 基礎</li>
+<li>JavaScript 基礎</li>
+<li>設計能力</li>
+<li>團隊合作</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>學習經歷</h2>
+<ul>
+<li>亞洲大學 - 就讀中</li>
+<li>參與課程專題與團隊合作</li>
+<li>持續學習網頁設計與相關技術</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>聯絡方式</h2>
+<button onclick="showContact()">顯示聯絡資訊</button>
+
+<div id="contact">
+<p>Email：yourmail@email.com</p>
+<p>Phone：0912-xxx-xxx</p>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 亞洲大學學生履歷</p>
+</footer>
+
+<script>
+function showContact(){
+    var x = document.getElementById("contact");
+    if(x.style.display === "none"){
+        x.style.display = "block";
+    }else{
+        x.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
