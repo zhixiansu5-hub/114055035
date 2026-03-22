@@ -1,140 +1,231 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>個人履歷 - 亞洲大學學生</title>
+<title>個人履歷</title>
 
 <style>
-body{
-    font-family: Arial, "Microsoft JhengHei", sans-serif;
-    margin:0;
-    background:#f5f5f5;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: #eef2f7;
+  padding: 40px 20px;
 }
 
-header{
-    background:#333;
-    color:white;
-    text-align:center;
-    padding:30px;
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
-.container{
-    width:80%;
-    margin:auto;
-    margin-top:20px;
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
 }
 
-.card{
-    background:white;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:10px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+.header img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
 }
 
-h2{
-    border-left:5px solid #333;
-    padding-left:10px;
+.header-info h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
 }
 
-button{
-    background:#333;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:5px;
-    cursor:pointer;
+.header-info p {
+  font-size: 14px;
+  opacity: 0.95;
+  margin-bottom: 3px;
 }
 
-button:hover{
-    background:#555;
+/* 主體兩欄 */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
-#contact{
-    display:none;
-    margin-top:10px;
+.sidebar {
+  background: #f8fafc;
+  padding: 25px;
+  border-right: 1px solid #eee;
 }
 
-footer{
-    text-align:center;
-    padding:15px;
-    background:#333;
-    color:white;
+.content {
+  padding: 25px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #333;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #4facfe;
+  margin-top: 6px;
+}
+
+.section {
+  margin-bottom: 25px;
+}
+
+ul {
+  padding-left: 18px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+/* 技能 */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skills span {
+  background: #4facfe;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* 按鈕 */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #ff7a18;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+#message {
+  margin-top: 10px;
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+/* RWD */
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
-<h1>個人履歷 Resume</h1>
-<p>亞洲大學學生</p>
-<p>學號：AU114055035</p>
-</header>
-
 <div class="container">
 
-<div class="card">
-<h2>基本資料</h2>
-<p>姓名：請填寫你的名字</p>
-<p>學校：亞洲大學</p>
-<p>科系：請填寫科系</p>
-<p>年級：請填寫年級</p>
-</div>
+  <div class="header">
+    <!-- ⚠️ 如果圖片還是顯示不出來，把 photo.jpg 改成 photo.jpg.jpeg -->
+    <img src="images/photo.jpg.jpeg">
+    <div class="header-info">
+      <h1>蘇芷嫻</h1>
+      <p>亞洲大學 室內設計系</p>
+      <p>學號：114055035</p>
+      <p>Email: zhixiansu5@gmail.com</p>
+      <!-- 電話不公開 -->
+    </div>
+  </div>
 
-<div class="card">
-<h2>自我介紹</h2>
-<p>
-我是一名就讀於亞洲大學的學生，對於學習新知與自我成長抱持積極的態度。
-在學期間努力培養專業能力與團隊合作精神，希望未來能夠在自己的領域中持續發展並創造價值。
-</p>
-</div>
+  <div class="main">
 
-<div class="card">
-<h2>技能 Skills</h2>
-<ul>
-<li>HTML / CSS 基礎</li>
-<li>JavaScript 基礎</li>
-<li>設計能力</li>
-<li>團隊合作</li>
-</ul>
-</div>
+    <div class="sidebar">
 
-<div class="card">
-<h2>學習經歷</h2>
-<ul>
-<li>亞洲大學 - 就讀中</li>
-<li>參與課程專題與團隊合作</li>
-<li>持續學習網頁設計與相關技術</li>
-</ul>
-</div>
+      <div class="section">
+        <h2>技能</h2>
+        <div class="skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>GitHub</span>
+          <span>設計軟體</span>
+        </div>
+      </div>
 
-<div class="card">
-<h2>聯絡方式</h2>
-<button onclick="showContact()">顯示聯絡資訊</button>
+      <div class="section">
+        <h2>經歷</h2>
+        <ul>
+          <li>美甲練習與作品展示（自學）</li>
+          <li>股票投資自主學習</li>
+        </ul>
+      </div>
 
-<div id="contact">
-<p>Email：yourmail@email.com</p>
-<p>Phone：0912-xxx-xxx</p>
-</div>
-</div>
+    </div>
+
+    <div class="content">
+
+      <div class="section">
+        <h2>自我介紹</h2>
+        <p>我是一名對室內設計與視覺美感充滿熱情的學生，喜歡將創意與實用結合，並持續探索不同領域的設計可能性。</p>
+      </div>
+
+      <div class="section">
+        <h2>學歷</h2>
+        <ul>
+          <li>亞洲大學 室內設計系 (2025 - 現在)</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>作品展示</h2>
+        <ul>
+          <li>個人美甲作品集</li>
+          <li>前端小專案</li>
+          <li>設計模型與作業</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>互動小功能</h2>
+        <button onclick="showMessage()">點我</button>
+        <p id="message"></p>
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
-
-<footer>
-<p>© 2026 亞洲大學學生履歷</p>
-</footer>
 
 <script>
-function showContact(){
-    var x = document.getElementById("contact");
-    if(x.style.display === "none"){
-        x.style.display = "block";
-    }else{
-        x.style.display = "none";
-    }
+function showMessage() {
+  document.getElementById("message").textContent = "你好！這份履歷更完整了✨";
 }
 </script>
 
