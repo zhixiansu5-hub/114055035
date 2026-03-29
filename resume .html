@@ -149,17 +149,20 @@ button:hover {
 
 <body>
 
+<!-- 音樂（完整版） -->
+<audio id="bgm" autoplay loop playsinline>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
 <div class="container">
 
   <div class="header">
-    <!-- ⚠️ 如果圖片還是顯示不出來，把 photo.jpg 改成 photo.jpg.jpeg -->
     <img src="images/photo.jpg.jpeg">
     <div class="header-info">
       <h1>蘇芷嫻</h1>
       <p>亞洲大學 室內設計系</p>
       <p>學號：114055035</p>
       <p>Email: zhixiansu5@gmail.com</p>
-      <!-- 電話不公開 -->
     </div>
   </div>
 
@@ -214,6 +217,7 @@ button:hover {
       <div class="section">
         <h2>互動小功能</h2>
         <button onclick="showMessage()">點我</button>
+        <button onclick="toggleMusic()">音樂開關</button>
         <p id="message"></p>
       </div>
 
@@ -224,6 +228,33 @@ button:hover {
 </div>
 
 <script>
+const audio = document.getElementById("bgm");
+
+// 嘗試自動播放（進階）
+audio.play().catch(() => {
+  audio.muted = true;
+  audio.play();
+
+  setTimeout(() => {
+    audio.muted = false;
+  }, 100);
+});
+
+// 再保險：點擊頁面一定播放
+document.addEventListener("click", () => {
+  audio.play().catch(() => {});
+}, { once: true });
+
+// 音樂開關
+function toggleMusic() {
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
+}
+
+// 原本功能
 function showMessage() {
   document.getElementById("message").textContent = "你好！這份履歷更完整了✨";
 }
