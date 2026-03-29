@@ -3,211 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>蘇芷嫻 - 個人履歷</title>
-
+<title>蘇芷嫻 - 個人履歷</title> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-body {
-  font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
-  background: linear-gradient(to bottom, #eaf6ff, #ffffff);
-  color: #333;
-}
+  body {
+    font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+    line-height: 1.6;
+    color: #444;
+  }
 
-/* Header */
-.header {
-  text-align: center;
-  padding: 70px 20px 90px;
-  background: linear-gradient(135deg, #a6d8ff, #66b3ff);
-  color: white;
-}
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
 
-.header img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 6px solid white;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
+  /* --- 左邊側欄 (30%) --- */
+  .left {
+    width: 30%;
+    background: #003d66; 
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.header h1 {
-  font-size: 30px;
-  letter-spacing: 5px;
-}
+  .profile-box {
+    margin-bottom: 30px;
+  }
 
-.header p {
-  font-size: 14px;
-  margin-top: 6px;
-}
+  .left img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 8px solid white;
+    margin-bottom: 25px;
+    background: #fff;
+  }
 
-/* 卡片區 */
-.container {
-  max-width: 900px;
-  margin: -60px auto 40px;
-  padding: 20px;
-}
+  .left h2 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+  }
 
-/* 卡片 */
-.card {
-  background: white;
-  border-radius: 20px;
-  padding: 25px 30px;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.3s;
-  opacity: 0;
-  transform: translateY(30px);
-}
+  .left .subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
 
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+  .left .info-p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    opacity: 0.8;
+  }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-}
+  /* 音樂來源標籤樣式 */
+  .music-credit {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    margin-top: 15px;
+    font-style: italic;
+  }
 
-.title {
-  font-size: 18px;
-  color: #66b3ff;
-  margin-bottom: 12px;
-  font-weight: bold;
-}
+  .page-num {
+    margin-top: auto;
+    font-size: 14px;
+    opacity: 0.5;
+    align-self: flex-start;
+  }
 
-/* 技能 */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+  /* --- 右邊主欄 (70%) --- */
+  .right {
+    width: 70%;
+    background: white;
+    padding: 60px 80px;
+  }
 
-.skills span {
-  background: #e6f4ff;
-  color: #3399ff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-}
+  .section {
+    margin-bottom: 50px;
+  }
 
-/* 按鈕 */
-button {
-  background: #66b3ff;
-  border: none;
-  padding: 10px 18px;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-right: 10px;
-}
+  .section-title {
+    font-size: 1.2rem;
+    color: #666;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
 
-button:hover {
-  background: #3399ff;
-}
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 2px solid #ddd;
+  }
 
-#message {
-  margin-top: 10px;
-  color: #3399ff;
-  font-weight: bold;
-}
+  .timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -37px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #555;
+  }
+
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .item-org {
+    color: #666;
+    margin-left: 15px;
+  }
+
+  .item-date {
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  .item-desc {
+    font-size: 0.95rem;
+    color: #666;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill-tag {
+    border: 1px solid #ddd;
+    padding: 6px 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+
+  button {
+    background: #003d66;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #005a99;
+  }
+
+  @media (max-width: 768px) {
+    .layout { flex-direction: column; }
+    .left, .right { width: 100%; padding: 40px 20px; }
+  }
 </style>
 </head>
-
 <body>
 
 <audio id="bgm" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Header -->
-<div class="header">
-  <img src="images/photo.jpg" alt="個人照片">
-  <h1>蘇 芷 嫻</h1>
-  <p>亞洲大學 室內設計系</p>
-  <p>學號：114055035 ｜ Email：zhixiansu5@gmail.com</p>
-</div>
-
-<!-- 卡片內容 -->
-<div class="container">
-
-  <div class="card">
-    <div class="title">自我介紹</div>
-    <p>
-      我是一名對室內設計與視覺美感充滿熱情的學生，擅長從生活中觀察細節，
-      並將創意轉化為實際設計。同時也積極探索美甲與投資等領域，
-      培養多元思維與設計敏銳度。
-    </p>
-  </div>
-
-  <div class="card">
-    <div class="title">學歷</div>
-    <p>亞洲大學 室內設計系（2025 - 現在）</p>
-  </div>
-
-  <div class="card">
-    <div class="title">作品展示</div>
-    <p>美甲作品集、前端小專案、設計模型</p>
-  </div>
-
-  <div class="card">
-    <div class="title">技能</div>
-    <div class="skills">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>GitHub</span>
-      <span>設計軟體</span>
+<div class="layout">
+  <div class="left">
+    <div class="profile-box">
+      <img src="images/photo.jpg.jpeg" alt="個人照片">
+      <h2>蘇芷嫻</h2>
+      <div class="subtitle">亞洲大學 室內設計系</div>
     </div>
+    
+    <div class="info-p">學號：114055035</div>
+    <div class="info-p">Email：zhixiansu5@gmail.com</div>
+    
+    <div class="music-credit">
+      <i class="fas fa-music"></i> 音樂來源：suno.ai
+    </div>
+    
+    <div class="page-num">01</div>
   </div>
 
-  <div class="card">
-    <div class="title">經歷</div>
-    <p>美甲練習（自學）、股票投資學習</p>
-  </div>
+  <div class="right">
+    
+    <div class="section">
+      <h3 class="section-title">自我介紹</h3>
+      <p class="item-desc">
+      我是一名對室內設計與視覺美感充滿熱情的學生，喜歡將創意與實用結合，並持續探索不同領域的設計可能性。
+      </p>
+    </div>
 
-  <div class="card">
-    <div class="title">互動</div>
-    <button onclick="showMessage()">點我</button>
-    <button onclick="toggleMusic()">音樂開關</button>
-    <p id="message"></p>
-  </div>
+    <div class="section">
+      <h3 class="section-title">相關學歷</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="item-header">
+            <div>
+              <span class="item-title">室內設計學士</span>
+              <span class="item-org">亞洲大學</span>
+            </div>
+            <span class="item-date">2025 - 現在</span>
+          </div>
+          <p class="item-desc">專注於空間美學、建築構造與前端技術整合應用。</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="section">
+      <h3 class="section-title">作品展示</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="item-header">
+            <span class="item-title">美甲作品 / 前端小專案</span>
+            <span class="item-date">Featured Works</span>
+          </div>
+          <p class="item-desc">結合美感設計與網頁開發，包含個人品牌視覺設計與互動式網頁專案。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">專業技能</h3>
+      <div class="skills-container">
+        <span class="skill-tag">HTML / CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">AutoCAD / 建模軟體</span>
+        <span class="skill-tag">視覺傳達設計</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">互動</h3>
+      <button onclick="showMessage()">點我驚喜</button>
+      <p id="message" style="margin-top: 15px; font-weight: bold; color: #003d66;"></p>
+    </div>
+
+  </div>
 </div>
 
 <script>
-const audio = document.getElementById("bgm");
+  const audio = document.getElementById("bgm");
 
-// 點擊播放音樂
-document.addEventListener("click", () => {
-  audio.play().catch(() => {});
-}, { once: true });
+  // 解鎖播放限制：監聽全域點擊
+  document.addEventListener('click', function() {
+    audio.play().catch(e => console.log("播放被攔截:", e));
+  }, { once: true });
 
-function toggleMusic() {
-  if (audio.paused) audio.play();
-  else audio.pause();
-}
-
-function showMessage() {
-  document.getElementById("message").textContent =
-  "✨ 你的履歷已經進化成設計師等級！";
-}
-
-// 滑入動畫
-const cards = document.querySelectorAll('.card');
-
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight * 0.85;
-
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-
-    if (top < trigger) {
-      card.classList.add('show');
-    }
-  });
-});
+  function showMessage() {
+    // 再次嘗試播放，確保音量已開啟
+    audio.muted = false;
+    audio.play();
+    document.getElementById("message").textContent = "✨ 履歷質感升級完成！祝你設計靈感源源不絕！";
+  }
 </script>
 
 </body>
