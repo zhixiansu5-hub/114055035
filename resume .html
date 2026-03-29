@@ -23,10 +23,10 @@
     min-height: 100vh;
   }
 
-  /* --- 左邊側欄 (30%) --- */
+  /* --- 左邊側欄 --- */
   .left {
     width: 30%;
-    background: #003d66; 
+    background: #4a4a4a; /* 改灰色 */
     color: white;
     padding: 60px 40px;
     display: flex;
@@ -67,7 +67,6 @@
     opacity: 0.8;
   }
 
-  /* 音樂來源標籤樣式 */
   .music-credit {
     font-size: 0.75rem;
     opacity: 0.5;
@@ -82,10 +81,10 @@
     align-self: flex-start;
   }
 
-  /* --- 右邊主欄 (70%) --- */
+  /* --- 右邊主欄 --- */
   .right {
     width: 70%;
-    background: white;
+    background: #f5f5f5; /* 淺灰背景 */
     padding: 60px 80px;
   }
 
@@ -95,17 +94,17 @@
 
   .section-title {
     font-size: 1.2rem;
-    color: #666;
+    color: #555;
     letter-spacing: 2px;
     margin-bottom: 25px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
   }
 
   .timeline {
     position: relative;
     padding-left: 30px;
-    border-left: 2px solid #ddd;
+    border-left: 2px solid #bbb;
   }
 
   .timeline-item {
@@ -121,7 +120,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #555;
+    background: #666;
   }
 
   .item-header {
@@ -144,12 +143,12 @@
 
   .item-date {
     font-size: 0.9rem;
-    color: #888;
+    color: #777;
   }
 
   .item-desc {
     font-size: 0.95rem;
-    color: #666;
+    color: #555;
   }
 
   .skills-container {
@@ -159,14 +158,15 @@
   }
 
   .skill-tag {
-    border: 1px solid #ddd;
+    border: 1px solid #aaa;
     padding: 6px 15px;
     border-radius: 4px;
     font-size: 0.9rem;
+    background: #fff;
   }
 
   button {
-    background: #003d66;
+    background: #555; /* 改灰 */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -176,7 +176,7 @@
   }
 
   button:hover {
-    background: #005a99;
+    background: #777;
   }
 
   @media (max-width: 768px) {
@@ -187,8 +187,9 @@
 </head>
 <body>
 
+<!-- 音樂改這裡 -->
 <audio id="bgm" loop>
-  <source src="music.mp3" type="audio/mpeg">
+  <source src="music.mp3.mp3" type="audio/mpeg">
 </audio>
 
 <div class="layout">
@@ -214,7 +215,7 @@
     <div class="section">
       <h3 class="section-title">自我介紹</h3>
       <p class="item-desc">
-      我是一名對室內設計與視覺美感充滿熱情的學生，喜歡將創意與實用結合，並持續探索不同領域的設計可能性。
+      我是一名對室內設計與視覺美感充滿熱情的學生，喜歡將創意與實用結合。
       </p>
     </div>
 
@@ -229,20 +230,6 @@
             </div>
             <span class="item-date">2025 - 現在</span>
           </div>
-          <p class="item-desc">專注於空間美學、建築構造與前端技術整合應用。</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3 class="section-title">作品展示</h3>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="item-header">
-            <span class="item-title">美甲作品 / 前端小專案</span>
-            <span class="item-date">Featured Works</span>
-          </div>
-          <p class="item-desc">結合美感設計與網頁開發，包含個人品牌視覺設計與互動式網頁專案。</p>
         </div>
       </div>
     </div>
@@ -253,15 +240,13 @@
         <span class="skill-tag">HTML / CSS</span>
         <span class="skill-tag">JavaScript</span>
         <span class="skill-tag">GitHub</span>
-        <span class="skill-tag">AutoCAD / 建模軟體</span>
-        <span class="skill-tag">視覺傳達設計</span>
       </div>
     </div>
 
     <div class="section">
       <h3 class="section-title">互動</h3>
       <button onclick="showMessage()">點我驚喜</button>
-      <p id="message" style="margin-top: 15px; font-weight: bold; color: #003d66;"></p>
+      <p id="message" style="margin-top: 15px; font-weight: bold; color: #555;"></p>
     </div>
 
   </div>
@@ -270,16 +255,14 @@
 <script>
   const audio = document.getElementById("bgm");
 
-  // 解鎖播放限制：監聽全域點擊
   document.addEventListener('click', function() {
     audio.play().catch(e => console.log("播放被攔截:", e));
   }, { once: true });
 
   function showMessage() {
-    // 再次嘗試播放，確保音量已開啟
     audio.muted = false;
     audio.play();
-    document.getElementById("message").textContent = "✨ 履歷質感升級完成！祝你設計靈感源源不絕！";
+    document.getElementById("message").textContent = "✨ 履歷變成高級灰系設計了！";
   }
 </script>
 
