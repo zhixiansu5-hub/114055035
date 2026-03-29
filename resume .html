@@ -3,226 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>個人履歷</title>
+<title>蘇芷嫻 - 個人履歷</title>
 
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Noto Sans TC', sans-serif;
-  background: #eef2f7;
-  padding: 40px 20px;
-}
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  overflow: hidden;
+  font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+  background: linear-gradient(to bottom, #eaf6ff, #ffffff);
+  color: #333;
 }
 
 /* Header */
 .header {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  padding: 30px;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  text-align: center;
+  padding: 70px 20px 90px;
+  background: linear-gradient(135deg, #a6d8ff, #66b3ff);
   color: white;
 }
 
 .header img {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
+  border: 6px solid white;
   object-fit: cover;
-  border: 4px solid white;
+  margin-bottom: 15px;
 }
 
-.header-info h1 {
-  font-size: 28px;
-  margin-bottom: 8px;
+.header h1 {
+  font-size: 30px;
+  letter-spacing: 5px;
 }
 
-.header-info p {
+.header p {
   font-size: 14px;
-  opacity: 0.95;
-  margin-bottom: 3px;
-}
-
-/* 主體兩欄 */
-.main {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-}
-
-.sidebar {
-  background: #f8fafc;
-  padding: 25px;
-  border-right: 1px solid #eee;
-}
-
-.content {
-  padding: 25px;
-}
-
-h2 {
-  font-size: 18px;
-  margin-bottom: 12px;
-  color: #333;
-  position: relative;
-}
-
-h2::after {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 3px;
-  background: #4facfe;
   margin-top: 6px;
 }
 
-.section {
+/* 卡片區 */
+.container {
+  max-width: 900px;
+  margin: -60px auto 40px;
+  padding: 20px;
+}
+
+/* 卡片 */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px 30px;
   margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-ul {
-  padding-left: 18px;
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-li {
-  margin-bottom: 6px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.title {
+  font-size: 18px;
+  color: #66b3ff;
+  margin-bottom: 12px;
+  font-weight: bold;
 }
 
 /* 技能 */
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .skills span {
-  background: #4facfe;
-  color: white;
-  padding: 6px 12px;
+  background: #e6f4ff;
+  color: #3399ff;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 13px;
 }
 
 /* 按鈕 */
 button {
-  padding: 10px 15px;
+  background: #66b3ff;
   border: none;
-  border-radius: 8px;
-  background: #ff7a18;
+  padding: 10px 18px;
   color: white;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  margin-right: 10px;
 }
 
 button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  background: #3399ff;
 }
 
 #message {
   margin-top: 10px;
-  color: #2ecc71;
+  color: #3399ff;
   font-weight: bold;
-}
-
-/* RWD */
-@media (max-width: 768px) {
-  .main {
-    grid-template-columns: 1fr;
-  }
-
-  .header {
-    flex-direction: column;
-    text-align: center;
-  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- 音樂（完整版） -->
-<audio id="bgm" autoplay loop playsinline>
+<audio id="bgm" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+<!-- Header -->
+<div class="header">
+  <img src="images/photo.jpg" alt="個人照片">
+  <h1>蘇 芷 嫻</h1>
+  <p>亞洲大學 室內設計系</p>
+  <p>學號：114055035 ｜ Email：zhixiansu5@gmail.com</p>
+</div>
+
+<!-- 卡片內容 -->
 <div class="container">
 
-  <div class="header">
-    <img src="images/photo.jpg.jpeg">
-    <div class="header-info">
-      <h1>蘇芷嫻</h1>
-      <p>亞洲大學 室內設計系</p>
-      <p>學號：114055035</p>
-      <p>Email: zhixiansu5@gmail.com</p>
+  <div class="card">
+    <div class="title">自我介紹</div>
+    <p>
+      我是一名對室內設計與視覺美感充滿熱情的學生，擅長從生活中觀察細節，
+      並將創意轉化為實際設計。同時也積極探索美甲與投資等領域，
+      培養多元思維與設計敏銳度。
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="title">學歷</div>
+    <p>亞洲大學 室內設計系（2025 - 現在）</p>
+  </div>
+
+  <div class="card">
+    <div class="title">作品展示</div>
+    <p>美甲作品集、前端小專案、設計模型</p>
+  </div>
+
+  <div class="card">
+    <div class="title">技能</div>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>GitHub</span>
+      <span>設計軟體</span>
     </div>
   </div>
 
-  <div class="main">
+  <div class="card">
+    <div class="title">經歷</div>
+    <p>美甲練習（自學）、股票投資學習</p>
+  </div>
 
-    <div class="sidebar">
-
-      <div class="section">
-        <h2>技能</h2>
-        <div class="skills">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>GitHub</span>
-          <span>設計軟體</span>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2>經歷</h2>
-        <ul>
-          <li>美甲練習與作品展示（自學）</li>
-          <li>股票投資自主學習</li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="content">
-
-      <div class="section">
-        <h2>自我介紹</h2>
-        <p>我是一名對室內設計與視覺美感充滿熱情的學生，喜歡將創意與實用結合，並持續探索不同領域的設計可能性。</p>
-      </div>
-
-      <div class="section">
-        <h2>學歷</h2>
-        <ul>
-          <li>亞洲大學 室內設計系 (2025 - 現在)</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h2>作品展示</h2>
-        <ul>
-          <li>個人美甲作品集</li>
-          <li>前端小專案</li>
-          <li>設計模型與作業</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h2>互動小功能</h2>
-        <button onclick="showMessage()">點我</button>
-        <button onclick="toggleMusic()">音樂開關</button>
-        <p id="message"></p>
-      </div>
-
-    </div>
-
+  <div class="card">
+    <div class="title">互動</div>
+    <button onclick="showMessage()">點我</button>
+    <button onclick="toggleMusic()">音樂開關</button>
+    <p id="message"></p>
   </div>
 
 </div>
@@ -230,34 +179,35 @@ button:hover {
 <script>
 const audio = document.getElementById("bgm");
 
-// 嘗試自動播放（進階）
-audio.play().catch(() => {
-  audio.muted = true;
-  audio.play();
-
-  setTimeout(() => {
-    audio.muted = false;
-  }, 100);
-});
-
-// 再保險：點擊頁面一定播放
+// 點擊播放音樂
 document.addEventListener("click", () => {
   audio.play().catch(() => {});
 }, { once: true });
 
-// 音樂開關
 function toggleMusic() {
-  if (audio.paused) {
-    audio.play();
-  } else {
-    audio.pause();
-  }
+  if (audio.paused) audio.play();
+  else audio.pause();
 }
 
-// 原本功能
 function showMessage() {
-  document.getElementById("message").textContent = "你好！這份履歷更完整了✨";
+  document.getElementById("message").textContent =
+  "✨ 你的履歷已經進化成設計師等級！";
 }
+
+// 滑入動畫
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+  const trigger = window.innerHeight * 0.85;
+
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+
+    if (top < trigger) {
+      card.classList.add('show');
+    }
+  });
+});
 </script>
 
 </body>
