@@ -5,220 +5,213 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>蘇芷嫻 - 個人履歷</title> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
-    line-height: 1.6;
-    color: #444;
-  }
+body {
+  font-family: 'Segoe UI', 'Noto Sans TC', sans-serif;
+  line-height: 1.6;
+  color: #444;
+}
 
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* 左側 */
+.left {
+  width: 30%;
+  background: #4a4a4a;
+  color: white;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.left img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border: 8px solid white;
+  margin-bottom: 25px;
+}
+
+.left h2 {
+  font-size: 2.2rem;
+  letter-spacing: 4px;
+}
+
+.subtitle {
+  margin: 10px 0 20px;
+  opacity: 0.9;
+}
+
+.info-p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.music-credit {
+  font-size: 0.75rem;
+  opacity: 0.5;
+  margin-top: 20px;
+}
+
+.page-num {
+  margin-top: auto;
+  opacity: 0.5;
+}
+
+/* 右側 */
+.right {
+  width: 70%;
+  background: #f5f5f5;
+  padding: 60px 80px;
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+}
+
+/* timeline */
+.timeline {
+  border-left: 2px solid #bbb;
+  padding-left: 25px;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -32px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: #666;
+  border-radius: 50%;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-title {
+  font-weight: bold;
+}
+
+.item-org {
+  margin-left: 10px;
+  color: #777;
+}
+
+.item-date {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.item-desc {
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+/* skills */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  border: 1px solid #aaa;
+  padding: 6px 14px;
+  background: white;
+  font-size: 0.85rem;
+}
+
+/* button */
+button {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #777;
+}
+
+@media (max-width: 768px) {
   .layout {
-    display: flex;
-    min-height: 100vh;
-  }
-
-  /* --- 左邊側欄 --- */
-  .left {
-    width: 30%;
-    background: #4a4a4a; /* 改灰色 */
-    color: white;
-    padding: 60px 40px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
-
-  .profile-box {
-    margin-bottom: 30px;
+  .left, .right {
+    width: 100%;
   }
-
-  .left img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border: 8px solid white;
-    margin-bottom: 25px;
-    background: #fff;
-  }
-
-  .left h2 {
-    font-size: 2.5rem;
-    letter-spacing: 4px;
-    margin-bottom: 10px;
-  }
-
-  .left .subtitle {
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin-bottom: 20px;
-    opacity: 0.9;
-  }
-
-  .left .info-p {
-    font-size: 0.95rem;
-    margin-bottom: 8px;
-    opacity: 0.8;
-  }
-
-  .music-credit {
-    font-size: 0.75rem;
-    opacity: 0.5;
-    margin-top: 15px;
-    font-style: italic;
-  }
-
-  .page-num {
-    margin-top: auto;
-    font-size: 14px;
-    opacity: 0.5;
-    align-self: flex-start;
-  }
-
-  /* --- 右邊主欄 --- */
-  .right {
-    width: 70%;
-    background: #f5f5f5; /* 淺灰背景 */
-    padding: 60px 80px;
-  }
-
-  .section {
-    margin-bottom: 50px;
-  }
-
-  .section-title {
-    font-size: 1.2rem;
-    color: #555;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-  }
-
-  .timeline {
-    position: relative;
-    padding-left: 30px;
-    border-left: 2px solid #bbb;
-  }
-
-  .timeline-item {
-    position: relative;
-    margin-bottom: 35px;
-  }
-
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -37px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #666;
-  }
-
-  .item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-
-  .item-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-  }
-
-  .item-org {
-    color: #666;
-    margin-left: 15px;
-  }
-
-  .item-date {
-    font-size: 0.9rem;
-    color: #777;
-  }
-
-  .item-desc {
-    font-size: 0.95rem;
-    color: #555;
-  }
-
-  .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .skill-tag {
-    border: 1px solid #aaa;
-    padding: 6px 15px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    background: #fff;
-  }
-
-  button {
-    background: #555; /* 改灰 */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: 0.3s;
-  }
-
-  button:hover {
-    background: #777;
-  }
-
-  @media (max-width: 768px) {
-    .layout { flex-direction: column; }
-    .left, .right { width: 100%; padding: 40px 20px; }
-  }
+}
 </style>
 </head>
+
 <body>
 
-<!-- 音樂改這裡 -->
 <audio id="bgm" loop>
   <source src="music.mp3.mp3" type="audio/mpeg">
 </audio>
 
 <div class="layout">
+
+  <!-- 左側 -->
   <div class="left">
-    <div class="profile-box">
-      <img src="images/photo.jpg.jpeg" alt="個人照片">
-      <h2>蘇芷嫻</h2>
-      <div class="subtitle">亞洲大學 室內設計系</div>
-    </div>
-    
+    <img src="images/photo.jpg.jpeg" alt="個人照片">
+    <h2>蘇芷嫻</h2>
+    <div class="subtitle">亞洲大學 室內設計系</div>
+
     <div class="info-p">學號：114055035</div>
     <div class="info-p">Email：zhixiansu5@gmail.com</div>
-    
+
     <div class="music-credit">
       <i class="fas fa-music"></i> 音樂來源：suno.ai
     </div>
-    
+
     <div class="page-num">01</div>
   </div>
 
+  <!-- 右側 -->
   <div class="right">
-    
+
+    <!-- 自我介紹 -->
     <div class="section">
       <h3 class="section-title">自我介紹</h3>
       <p class="item-desc">
-      我是一名對室內設計與視覺美感充滿熱情的學生，喜歡將創意與實用結合。
+        我是一名對室內設計與視覺美感充滿熱情的學生，擅長將創意與實用性結合。
+        在學習過程中，逐漸培養出對空間氛圍、材質搭配與動線規劃的敏銳度，
+        並透過實作與模型製作，將想法具體化。
       </p>
     </div>
 
+    <!-- 學歷 -->
     <div class="section">
       <h3 class="section-title">相關學歷</h3>
       <div class="timeline">
@@ -234,69 +227,82 @@
       </div>
     </div>
 
+    <!-- 設計經驗 -->
     <div class="section">
-      <h3 class="section-title">專業技能</h3>
-      <div class="skills-container">
-        <span class="skill-tag">HTML / CSS</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">GitHub</span>
+      <h3 class="section-title">設計經驗</h3>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <div>
+              <span class="item-title">膠囊旅館設計</span>
+              <span class="item-org">課程專案</span>
+            </div>
+            <span class="item-date">2025</span>
+          </div>
+          <p class="item-desc">
+            規劃60㎡空間，強調私密性與動線流暢，透過模組化設計提升空間效率。
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-header">
+            <div>
+              <span class="item-title">美妝快閃店設計</span>
+              <span class="item-org">模型製作</span>
+            </div>
+            <span class="item-date">2025</span>
+          </div>
+          <p class="item-desc">
+            以中性風格為主，結合燈光與展示設計，提升品牌互動與體驗感。
+          </p>
+        </div>
+
       </div>
     </div>
 
+    <!-- 專業技能 -->
+    <div class="section">
+      <h3 class="section-title">專業技能</h3>
+      <div class="skills-container">
+        <span class="skill-tag">AutoCAD</span>
+        <span class="skill-tag">SketchUp</span>
+        <span class="skill-tag">Enscape / Lumion</span>
+        <span class="skill-tag">Photoshop</span>
+        <span class="skill-tag">Illustrator</span>
+        <span class="skill-tag">InDesign</span>
+        <span class="skill-tag">空間規劃</span>
+        <span class="skill-tag">動線設計</span>
+        <span class="skill-tag">模型製作</span>
+        <span class="skill-tag">材質搭配</span>
+        <span class="skill-tag">色彩設計</span>
+        <span class="skill-tag">簡報製作</span>
+      </div>
+    </div>
+
+    <!-- 互動 -->
     <div class="section">
       <h3 class="section-title">互動</h3>
       <button onclick="showMessage()">點我驚喜</button>
-      <p id="message" style="margin-top: 15px; font-weight: bold; color: #555;"></p>
+      <p id="message" style="margin-top:10px;"></p>
     </div>
 
   </div>
 </div>
 
 <script>
-  const audio = document.getElementById("bgm");
+const audio = document.getElementById("bgm");
 
-  document.addEventListener('click', function() {
-    audio.play().catch(e => console.log("播放被攔截:", e));
-  }, { once: true });
+document.addEventListener('click', function() {
+  audio.play().catch(() => {});
+}, { once: true });
 
-  function showMessage() {
-    audio.muted = false;
-    audio.play();
-    document.getElementById("message").textContent = "✨ 履歷變成高級灰系設計了！";
-  }
+function showMessage() {
+  audio.muted = false;
+  audio.play();
+  document.getElementById("message").textContent = "✨ 這份履歷其實很有設計感，只是你還沒填滿它而已。";
+}
 </script>
 
 </body>
 </html>
-<div class="section">
-  <h3 class="section-title">設計經驗</h3>
-  <div class="timeline">
-
-    <div class="timeline-item">
-      <div class="item-header">
-        <div>
-          <span class="item-title">膠囊旅館設計</span>
-          <span class="item-org">課程專案</span>
-        </div>
-        <span class="item-date">2025</span>
-      </div>
-      <p class="item-desc">
-        規劃60㎡空間，強調私密性與流暢動線，結合模組化設計提升空間使用效率。
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <div class="item-header">
-        <div>
-          <span class="item-title">美妝快閃店設計</span>
-          <span class="item-org">模型製作</span>
-        </div>
-        <span class="item-date">2025</span>
-      </div>
-      <p class="item-desc">
-        以中性風格為主軸，結合燈光與展示設計，提升品牌體驗與互動性。
-      </p>
-    </div>
-
-  </div>
-</div>
